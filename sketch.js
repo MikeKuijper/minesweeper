@@ -74,6 +74,9 @@ function drawGrid() {
       grid[index].x * (xGridScale) + xGridScale,
       grid[index].y * (yGridScale) + yGridScale);
 
+    let count = getNeighbourBombs(grid[index].x, grid[index].y);
+    if (count == 0) textEnabled = false;
+
     if (textEnabled) {
       push();
       textSize(20);
@@ -81,7 +84,7 @@ function drawGrid() {
       stroke(255);
       fill(255);
       strokeWeight(1);
-      text(getNeighbourBombs(grid[index].x, grid[index].y), grid[index].x * xGridScale + 0.5 * xGridScale, grid[index].y * yGridScale + 0.5 * yGridScale);
+      text(count, grid[index].x * xGridScale + 0.5 * xGridScale, grid[index].y * yGridScale + 0.5 * yGridScale);
       pop();
     }
   }
@@ -207,3 +210,4 @@ function drawVictory() {
   stroke(0);
   rect(0, 0, width - gap / 2, height - gap / 2);
 }
+
