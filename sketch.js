@@ -124,7 +124,7 @@ function mousePressed() {
         }
       }
     }
-  } else if (mouseButton == RIGHT) {
+  } else if (mouseButton == CENTER) {
     for (let index in grid) {
       if (mouseX >= grid[index].x * xGridScale && mouseY >= grid[index].y * yGridScale && mouseX <= grid[index].x * (xGridScale) + xGridScale && mouseY <= grid[index].y * (yGridScale) + yGridScale) {
         if (!grid[index].checked) grid[index].marked = !grid[index].marked;
